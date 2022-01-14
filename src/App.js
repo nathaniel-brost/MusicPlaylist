@@ -1,25 +1,49 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {  
+      songs: [],
+    }
+  }
+
+  componentDidMount() {
+    this.getAll();
+  }
+
+  getAll = async () => {
+    await axios
+      .get('http://www.devcodecampmusiclibrary.com/api/music')
+      .then((res) => {
+        console.log(res);
+        const songs = res.data;
+        this.setState({ songs: songs });
+      });
+  }
+
+
+
+  render() { 
+    return ( 
+      <div>
+        <main>
+          {/*condition? true : falsestuff */}
+
+          {(this.state.songs.length > 0) ? <> <h1 style={{color:"grey"}}>{this.state.songs[0].title}</h1></>: <p>nada</p>}
+          <ul>
+          {(this.state.songs.length > 0) ? this.state.songs.map((song)=> <li style={{color:"grey"}}> {song.title} </li>    ):null}
+
+          </ul>
+        </main>
+      </div>
+    );
+  }
 }
+ 
+
 
 export default App;
