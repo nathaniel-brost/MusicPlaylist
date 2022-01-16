@@ -2,12 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import axios from 'axios';
+import Navigation from './Navigation';
+import Playlist from './Playlist';
+import NowPlaying from './NowPlaying';
+import Filter from './Filter';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {  
       songs: [],
+      
     }
   }
 
@@ -29,15 +35,56 @@ class App extends Component {
 
   render() { 
     return ( 
+
+
+
+
+
       <div>
+        <Navigation/>
+      
         <main>
-          {/*condition? true : falsestuff */}
-
-          {(this.state.songs.length > 0) ? <> <h1 style={{color:"grey"}}>{this.state.songs[0].title}</h1></>: <p>nada</p>}
-          <ul>
-          {(this.state.songs.length > 0) ? this.state.songs.map((song)=> <li style={{color:"grey"}}> {song.title} </li>    ):null}
-
-          </ul>
+          
+          <div class="container">
+            <div class="row align-items-start">
+              <div class="col">
+                Now Playing
+              </div>
+              <div class="col">
+                Filters
+              </div>
+              <div class="col">
+                Nathaniel's Top 1000
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col">
+                <NowPlaying />
+              </div>
+              <div class="col">
+                <Filter />
+              </div>
+              <div class="col">
+                <Playlist 
+                check={this.state.songs.length}
+                song={this.state.songs[this.state.songs]}/>
+                
+              </div>
+            </div>
+            <div class="row align-items-end">
+              <div class="col">
+                One of three columns
+              </div>
+              <div class="col">
+                One of three columns
+              </div>
+              <div class="col">
+              <ul>
+                Nothing here            
+            </ul>
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     );
