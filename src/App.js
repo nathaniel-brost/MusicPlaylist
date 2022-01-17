@@ -59,8 +59,8 @@ class App extends Component {
             </div>
             <div class="row align-items-center">
               <div class="col">
-                <NowPlaying />
-                {/* {this.state.songs[0].title} */}
+                <NowPlaying songs={this.state.songs}/>
+               
               </div>
               <div class="col">
                 <Filter />

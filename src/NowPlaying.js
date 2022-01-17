@@ -1,10 +1,11 @@
 import React from 'react';
 
 
-const NowPlaying = () => {
+const NowPlaying = (props) => {
     return (
         <div>
-          Hello
+          Current song
+          {/* <td>{songs[0].title}</td> */}
         </div>
       );
 }
