@@ -60,7 +60,7 @@ class App extends Component {
             <div class="row align-items-center">
               <div class="col">
                 <NowPlaying />
-                {/* {this.state.song[0].title} */}
+                {/* {this.state.songs[0].title} */}
               </div>
               <div class="col">
                 <Filter />
@@ -68,7 +68,7 @@ class App extends Component {
               <div class="col">
                 <Playlist 
                 check={this.state.songs.length}
-                song={this.state.songs[this.state.songs]}/>
+                songs={this.state.songs}/>
                 
               </div>
             </div>

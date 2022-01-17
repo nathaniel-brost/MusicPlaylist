@@ -6,40 +6,27 @@ import React from "react";
 const Playlist = (props) => {
     return (
         <div>
-            <table class="table">
+            <table className="table">
             <thead>
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Song</th>
                 <th scope="col">Artist</th>
-                <th scope="col">Something else</th>
+                <th scope="col">Album</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <th scope="row">1</th>
-                <td>Track 1</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                
                 </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Track 2</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                {(props.songs.length > 0) ? props.songs.map((song,i)=> <tr key={i}> <td>{song.id}</td><td>{song.title}</td>  <td>{song.artist}</td> <td>{song.album}</td> </tr>    ):null} 
+
             </tbody>
+
             </table>
 
 
-                <ul>
-                    {/* {(props.check > 0) ? props.song.map((song,i)=> <li style={{color:"grey"}}> {song.title} by {song.artist} </li>    ):null}  */}
-                </ul>
+
 
 
     </div>
