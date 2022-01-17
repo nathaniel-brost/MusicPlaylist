@@ -54,12 +54,13 @@ class App extends Component {
                 Filters
               </div>
               <div class="col">
-                Nathaniel's Top 1000
+                Playlist
               </div>
             </div>
             <div class="row align-items-center">
               <div class="col">
                 <NowPlaying />
+                {/* {this.state.song[0].title} */}
               </div>
               <div class="col">
                 <Filter />

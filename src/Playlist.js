@@ -38,7 +38,7 @@ const Playlist = (props) => {
 
 
                 <ul>
-                    {/* {(props.check > 0) ? props.song.map((song,i)=> <li style={{color:"grey"}}> {song.title} by {song.artist} </li>    ):null} */}
+                    {/* {(props.check > 0) ? props.song.map((song,i)=> <li style={{color:"grey"}}> {song.title} by {song.artist} </li>    ):null}  */}
                 </ul>
 
 

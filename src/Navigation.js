@@ -16,7 +16,7 @@ function Navigation () {
             </li>
 
             <li className="nav-item">
-            <a className="nav-link disabled">The Meaning of Life (Unavailable)</a>
+            <a className="nav-link disabled">The Meaning of Life (Broken Link)</a>
             </li>
         </ul>
         {/* <form className="d-flex">
